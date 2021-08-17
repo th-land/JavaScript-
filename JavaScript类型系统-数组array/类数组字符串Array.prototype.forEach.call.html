@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'abc';
+        Array.prototype.forEach.call(str, function(chr) { //forEach作为array.prototype上的一个数组方法,可以遍历数组成员,对于非数组str字符串来说,需要添加call来改变执行作用域,是str字符串也可以使用foreach方法,call的第一个参数是一个绑定的对象,第二个参数是一个形参,用于传递数据
+            console.log(chr);
+        });
+        Array.prototype.splice.call(str, 1);
+        console.log(str);
+    </script>
+</body>
+
+</html>

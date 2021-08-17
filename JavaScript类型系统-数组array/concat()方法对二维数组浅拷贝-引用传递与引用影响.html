@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        numbers = [
+            [1, 2, 3]
+        ];
+        var newNumbers = numbers.concat(); //浅拷贝对象引用
+        console.log(numbers, newNumbers);
+        numbers[0][2] = 5; //数组第一维存放的是第二维的引用,而第二维才是存放它们的内容,如果只有一个索引0的话,相当于修改了管道,而不是去改变源头,只有通过二维修改才会有真正的变化
+        console.log(numbers, newNumbers);
+    </script>
+</body>
+
+</html>

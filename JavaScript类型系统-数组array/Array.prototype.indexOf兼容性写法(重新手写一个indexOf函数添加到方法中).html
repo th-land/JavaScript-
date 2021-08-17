@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6];
+        Array.prototype.indexOf = function(searchElement, fromIndex) {
+            var index = -1; //设定一个index等于-1,如果没有进入if语句,则默认返回-1
+            fromIndex = fromIndex * 1 || 0; //fromIndex代表函数传入的第二个参数,为1或1以上时*1,否则是0
+            for (var k = 0, length = this.length; k < length; k++) { //当k小于数组的长度时,继续循环(this在这个函数中代表数组的长度)
+                console.log('k=' + k);
+                console.log('fromIndex=' + fromIndex);
+                console.log('this[k]=' + this[k]);
+                if (k >= fromIndex && this[k] === searchElement) { //如果k循环以后大于等于起始位置fromIndex,数组[k]索引的值 === searchElement(搜索的元素)
+                    //为什么k要大于等于fromIndex,因为要检索的元素一定是会等于或者大于起始位置的,如果不是这样的话,将返回开头设定的index = -1;
+                    console.log('if内部k=' + k);
+                    console.log('if内部fromIndex=' + fromIndex);
+                    console.log('if内部this[k]' + this[k]);
+                    index = k;
+                    break;
+                }
+            }
+            return index;
+        }
+        console.log(arr.indexOf(4, 0));
+    </script>
+</body>
+
+</html>
