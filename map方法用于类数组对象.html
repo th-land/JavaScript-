@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var initialValue = Array.prototype.map.call('abc', function(item, index, arr) {
+            //通过原型写法来使abc字符串使用数组map方法,call提供this指向字符串abc,组合调用
+            return item.toUpperCase(); //元素大写转换
+        });
+        console.log(initialValue);
+    </script>
+</body>
+
+</html>

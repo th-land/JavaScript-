@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = []; //定义一个空数组准备将后续的20000数字塞入
+        var NUM = 500; //定义数字20000和arr整合
+        for (var i = 0; i < NUM; i++) {
+            arr.push(i); //通过for循环搭配push不断将数组塞入数组
+        }
+        var startTime = +new Date(); //标记时间,赋值到start变量
+        for (var i = 0; i < arr.length; i++) { //for循环不断打乱数组
+            var randomIndex = Math.floor(Math.random() * arr.length); //通过random()返回的随机数(0-1之间)乘arr数组的长度,再通过floor()函数进行向下取整,赋值给变量randomIdex,用做后续交换数组
+            console.log('交换数组前i' + [arr[i] + '交换数组前randomIndex' + arr[randomIndex]]);
+            [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]]; //本段代码精髓所在,前两个数组互相交换,打乱顺序
+            console.log('交换数组后i' + [arr[i] + '交换数组后randomIndex' + arr[randomIndex]]);
+            console.log('交换后arr=' + arr);
+        }
+        console.log(+new Date() - startTime);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array = [1, 2, 3, 4, 5];
+        var obj = {
+            a: 1,
+        };
+        //通过push.apply()向对象添加数组元素,apply()第一个参数作为this指向对象obj,第二次参数可以是数组,将数组元素一个个加到push,如果不是apply()的特殊能力,整个数组会以一个参数的形式通过push()添加,而不是拆开添加
+        console.log(obj, Array.prototype.push.apply(obj, array)); //{0: 1, 1: 2, 2: 3, 3: 4, 4: 5, a: 1, length: 5} 5
+    </script>
+</body>
+
+</html>

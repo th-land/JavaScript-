@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = []; //定义数组
+        var num = 100000; //定义要排序的数字,等待后续塞入数组
+        for (var i = 0; i < num; i++) {
+            arr.push(i); //将10万个数字塞入数组
+        }
+        var start = +new Date(); //通过+符号,new Date()将时间格式转化为字符串存储在start变量中
+        arr.sort(function() {
+            return Math.random() - 0.5;
+        });
+        console.log(+new Date - start); //打印时间减掉之前标记的时间,等于执行所需时间
+    </script>
+</body>
+
+</html>

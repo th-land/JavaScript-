@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //设定一个对象数组,用来提取数组中的特性属性值
+        var user = [{
+            name: 't1',
+            email: 't1@qq.com'
+        }, {
+            name: 't2',
+            email: 't2@qq.com'
+        }, {
+            name: 't3',
+            email: 't3@qq.com'
+        }];
+        console.log(user.map(function(item, index, arr) {
+            return item.email //提取特定属性值
+        })); //["t1@qq.com", "t2@qq.com", "t3@qq.com"]
+    </script>
+</body>
+
+</html>
