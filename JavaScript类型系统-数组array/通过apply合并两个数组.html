@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [1, 2, 3];
+        var b = [4, 5, 6];
+        console.log(a, Array.prototype.push.apply(a, b)); //123456,6;
+        //Array.通过原型链找到数组a,与a.prototype.push.apply写法相同
+        //apply方法与call方法类似,apply接受数组作为参数,通过this绑定作用域,push方法再将b数组添加到a数组尾部
+    </script>
+</body>
+
+</html>

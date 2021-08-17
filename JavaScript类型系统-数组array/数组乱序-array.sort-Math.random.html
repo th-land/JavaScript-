@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array = [1, 2, 3, 4, 5, 6];
+        console.log(array.sort(function() { //sort排序算法,可提供一个函数作为排序方法
+            return Math.random() - 0.5; //0.5表示整数和负数的概率都是1/2.当为正数时前面一个数放到后面,当为负数时前面的数仍放在前面,为0时不改变
+        }));
+    </script>
+</body>
+
+</html>

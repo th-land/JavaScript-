@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numbers = {
+            a: 0
+        };
+        var numbers1 = {
+            b: 1
+        }
+        console.log(numbers, Array.prototype.concat.call(numbers, numbers1)); //concat()方法也可以用于对象合并数组,但是必须借助call方法,因为只有通过call改变this作用域才可以使对象使用上数组方法
+        console.log(numbers);
+    </script>
+</body>
+
+</html>

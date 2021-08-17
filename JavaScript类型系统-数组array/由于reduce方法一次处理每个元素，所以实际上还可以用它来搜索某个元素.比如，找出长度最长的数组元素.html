@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findlongest(entries) {
+            return entries.reduce(function(prev, cur) {
+                console.log(prev, cur);
+                return cur.length > prev.length ? cur : prev;
+            }, ''); //第二个参数''必须添加,数组元素1与23232的长度是相同的,只有通过空字符串和数组元素相对比,将数组元素通过valueOf()-toString()方法隐式转换成数字,为对比做一个迭代的开头,才能进行正确的对比
+        }
+        console.log(findlongest([1, 2, 3, 'ab', 4, 'bcd', 5, 6785, 4]));
+        console.log([6785].length); //数组元素的长度为1
+        console.log('bcd'.length); //字符串长度为3
+    </script>
+</body>
+
+</html>
