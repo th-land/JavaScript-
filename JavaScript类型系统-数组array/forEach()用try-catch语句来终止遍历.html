@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [1, 2, 3, 4, 5];
+        a.forEach(function(item, index, arr) {
+            //try catch用来捕获错误,try语句中使用throw+newError抛出错误给catch来执行,catch中的形参(e)必须加
+            try {
+                if (item == 3) throw new Error;
+            } catch (e) {
+                console.log(item); //2
+            }
+        });
+    </script>
+</body>
+
+</html>

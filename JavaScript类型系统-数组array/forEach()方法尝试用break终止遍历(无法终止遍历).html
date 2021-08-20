@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //forEach()方法无法在所有元素都传递给调用的函数之前终止遍历。也就是说,没有像for循环中使用的相应的break语句
+        var a = [1, 2, 3, 4, 5];
+        sum = a.forEach(function(item, index, arr) {
+            if (item == 2) {
+                break;
+            }
+        });
+        console.log(sum); //这里会报错 //Uncaught SyntaxError: unlabeled break must be inside loop or switch
+    </script>
+</body>
+
+</html>
