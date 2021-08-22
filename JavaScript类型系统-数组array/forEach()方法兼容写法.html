@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //思路,forEach是模仿for循环的数组方法,先创造一个for循环来执行-执行次数-模拟forEach方法结构,传入的第一个参数是否是函数-模拟第二个及后续参数
+        Array.prototype.forEach = function(fn, context) {
+            //forEach的本质是模拟for循环,在此设定for循环
+            for (var k = 0, length = this.length; k < length; k++) { //this代表传入的数组或对象
+                if (typeof fn === 'function' && Object.prototype.hasOwnProperty.call(this, k)) {
+                    //Object.prototype.hasOwnProperty.call ==== this.hasOwnProperty(k)另一种写法
+                    //判断传入的fn是否为一个函数 && hasOwnProperty()方法会返回一个布尔值,指示对象自身属性中是否具有指定的属性(也就是,是否有指定的键)
+                    fn.call(context, this[k], k, this);
+                    console.log(context); //Array(3) [ "a", "b", "c" ,"d","f"]
+                }
+            }
+        }
+        var array = ['a', 'b', 'c', 'd', 'f'];
+        var sum = [0, 1, 2, , 4].forEach(function(item, index, arr) {
+                console.log(this[item]);
+            }, array) //a,b,c,f
+    </script>
+</body>
+
+</html>
