@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [1, 2, 3, 4, undefined, null, 7, 8, 9];
+        console.log(a.length); //9
+        var dense = a.filter(function(item, index, arr) {
+            return item != undefined;
+        });
+        console.log(dense, dense.length); //array(7),7
+    </script>
+</body>
+
+</html>

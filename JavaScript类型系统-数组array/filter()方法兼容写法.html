@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.filter = function(fn, context) {
+            var arr = []; //设置空数组
+            if (typeof fn === 'function') { //判断是否为函数
+                for (var k = 0, length = this.length; k < this.length; k++) { //循环遍历数组元素
+                    fn.call(context, this[k], k, this) && arr.push(this[k]); //特殊注意,逻辑与运算符将undefined和null判定为false,第一段代码如果是false的话,是不会继续执行第二段的
+                }
+            }
+            return arr; //返回push过后的数组arr
+        }
+        var sum = [1, 7, , null, 2, 3, 4, 5, null, undefined, 6].filter(function(item, index, arr) {
+            return item; //返回传入函数的数组元素
+        });
+        console.log(sum); //打印sum实例
+    </script>
+</body>
+
+</html>
