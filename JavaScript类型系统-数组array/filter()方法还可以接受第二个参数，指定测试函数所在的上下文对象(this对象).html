@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Obj = function() { //新建一个构造函数模板,作为filter()函数的第二个参数
+            this.Max = 4;
+        }
+        var myFilter = function(item, index, arr) { //将函数变成一个名为myfilter的实例,作为filter()的第一个参数
+            if (item > this.Max) {
+                return item;
+            }
+        };
+        var arr = [1, 2, 3, 4, 5, 6].filter(myFilter, new Obj)//必须使用new,因为使用new返回的是this,不使用new则无法返回this,也就不能作为第二个参数来执行了
+        console.log(arr); //5,6
+    </script>
+</body>
+
+</html>
