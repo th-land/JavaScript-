@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.some = function(fn, context) {
+            var passed = false; //先定义passed变量默认为false,这里设定的意义如果是空数组的话,默认返回false
+            if (typeof fn === 'function') { //判断函数
+                for (var k = 0, length = this.length; k < length; k++) { //for循环遍历
+                    if (passed === true) break; //这里设定passed === true的意义在于some()只要有一个元素产生true的话直接返回true
+                    passed = fn.call(context, this[k], k, this); //将遍历执行的函数结果(true或false)赋值给passed进行if判断
+                }
+            }
+            return passed; //返回passed的结果(如果是true,第一次产生true就可以终止循环了,一直是false的话最终也会返回)
+        }
+        var num = function() { //构造函数模板
+            this.MAX = 4; //返回this
+        }
+        var array = [1, 2, 3, 4, 5];
+        console.log(array.some(function(elem, index, arr) {
+            return elem > this.MAX;
+        }, new num)); //依靠new关键字来返回this
+    </script>
+</body>
+
+</html>
