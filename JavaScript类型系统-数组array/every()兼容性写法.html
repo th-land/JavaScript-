@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.every = function(fn, context) {
+            var passed = true; //定义passed变量,其目的如果调用的数组为空数组,返回的是true
+            if (typeof fn === 'function') { //判断第一个参数是否为函数
+                for (var k = 0, length = this.length; k < length; k++) { //循环遍历数组元素执行
+                    if (passed === false) break; //如果下面执行的代码循环中某个结果是false,则跳出当前for循环
+                    passed = fn.call(context, this[k], k, this); //将第一个函数参数的遍历的执行结果赋值给passed
+                }
+            }
+            return passed;
+        }
+        var Obj = function() { //构造函数模板
+            this.MAX = 4; //构造函数模板返回this
+        }
+        var sum = [5, 6, 7, 8];
+        console.log(sum.every(function(item, index, arr) {
+            return item > this.MAX;
+        }, new Obj)); //加new返回this,不加则不返回,Obj也不会作为every()的执行上下文生效
+    </script>
+</body>
+
+</html>
