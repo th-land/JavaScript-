@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.norepeat = function() {
+            var result = []; //设定空数组,理解indexOf特性,在下面循环中,indexOf()方法会返回检索元素的位置,找不到则返回-1
+            for (var i = 0; i < this.length; i++) { //循环遍历
+                if (result.indexOf(this[i]) == -1) { //将通过indexOf()方法找不到的元素(也就是返回-1的元素)都添加到result空数组中
+                    result.push(this[i]); //将indexOf()方法找不到重复的元素添加到result
+                }
+            }
+            return result; //返回result
+        }
+        var a = ['a', 'b', 'c', 'a'];
+        console.log(a.norepeat());
+    </script>
+</body>
+
+</html>
