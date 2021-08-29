@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function copyArray(arr, result) {
+            var result = result || []; //设定-如果传入的第二个参数result存在则不赋值空数组,起始执行默认是空数组,为后续嵌套数组做基础
+            for (var i = 0; i < arr.length; i++) { //老朋友for循环
+                if (arr[i] instanceof Array) { //检测arr[i]是否为一个数组
+                    result[i] = []; //将空数组赋值给result[i]-result中的一个元素
+                    copyArray(arr[i], result[i]); //再执行一次copyArray(),其本质就是通过上述代码剥离嵌套数组,使其可以进入else的执行
+                } else {
+                    result[i] = arr[i] //将arr[i]元素赋值给result[i],循环结束后就全部添加完毕
+                }
+            }
+            return result; //返回result
+        }
+        var obj1 = [1, 2, [3, 4],
+            [5, 6]
+        ];
+        var obj2 = copyArray(obj1);
+        console.log(obj1); //Array(4)[1, 2, (2)[…], (2)[…] ]
+        console.log(obj2); //Array(4)[1, 2, (2)[…], (2)[…] ]
+        obj1[4] = [7, 8];
+        console.log(obj1); //Array(5)[1, 2, (2)[…], (2)[…], (2)[…] ]
+        console.log(obj2); //Array(4) [ 1, 2, (2) […], (2) […] ]
+    </script>
+</body>
+
+</html>
