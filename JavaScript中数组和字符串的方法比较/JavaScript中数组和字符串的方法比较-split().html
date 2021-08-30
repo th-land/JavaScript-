@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var colorText = 'red,blue,green,yellow';
+        console.log(colorText.split('')); //[ "r", "e", "d", ",", "b", "l", "u", "e", ",", "g", … ]
+        console.log(colorText.split(',')); //[ "red", "blue", "green", "yellow" ]
+        console.log(colorText.split(',', 2)); //[ "red", "blue" ]
+        console.log(colorText.split(',', 6)); //[ "red", "blue", "green", "yellow" ]
+        console.log(colorText.split('-')); //[ "red,blue,green,yellow" ]
+        console.log(colorText.split(/\,/)); //[ "red", "blue", "green", "yellow" ]
+        console.log(colorText.split(/e/)); //[ "r", "d,blu", ",gr", "", "n,y", "llow" ]
+        console.log(colorText.split(/[^\,]+/)); //[ "", ",", ",", ",", "" ]
+    </script>
+</body>
+
+</html>
