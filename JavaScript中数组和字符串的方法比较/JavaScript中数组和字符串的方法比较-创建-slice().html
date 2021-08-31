@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var stringValue = 'hello world';
+        console.log(stringValue.slice()); //hello world
+        console.log(stringValue.slice(2)); //llo world
+        console.log(stringValue.slice(20)); //''
+        console.log(stringValue.slice(2, undefined)); //llo world
+        console.log(stringValue.slice(2, null)); //''
+        console.log(stringValue.slice(null, 2)) //he
+
+        console.log(stringValue.slice(2, -5)); //llo
+        console.log(stringValue.slice(2, -20)); //''
+        console.log(stringValue.slice(-2, 2)); //''
+        console.log(stringValue.slice(-2, -20)); //''
+        console.log(stringValue.slice(-2, 20)); //ld
+        console.log(stringValue.slice(-20, 2)); //he
+        console.log(stringValue.slice(-20, -2)); //hello wor
+    </script>
+</body>
+
+</html>
