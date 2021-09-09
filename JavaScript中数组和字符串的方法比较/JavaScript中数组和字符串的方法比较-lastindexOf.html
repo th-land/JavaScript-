@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var string = 'hello world world';
+        console.log(string.lastIndexOf('ld')); //15
+        console.log(string.lastIndexOf('ld', undefined)); //15
+        console.log(string.lastIndexOf('ld', NaN)); //15
+        console.log(string.lastIndexOf('ld', -1)); //-1
+        console.log(string.lastIndexOf('h', -1)); //0
+        console.log(string.lastIndexOf('w', undefined)); //12
+
+        console.log(string.lastIndexOf('ld', 10)); //9
+        console.log(string.lastIndexOf('ld', [10])); //9
+        console.log(string.lastIndexOf('true', [10])); //-1
+        console.log(string.lastIndexOf(false, [10])); //-1
+
+        var arr = [1, 2, 3, '1', '2', '3'];
+        console.log(arr.lastIndexOf('2')); //4
+        console.log(arr.lastIndexOf('3')); //5
+        console.log(arr.lastIndexOf(0)); //-1
+
+        var arr = ['a', 'b', 'c', 'd', 'e', 'a', 'b'];
+        console.log(arr.lastIndexOf('b')); //6
+        console.log(arr.lastIndexOf('b', undefined)); //-1
+        console.log(arr.lastIndexOf('a', undefined)); //0
+        console.log(arr.lastIndexOf('b', NaN)); //-1
+        console.log(arr.lastIndexOf('b', 1)); //1
+        console.log(arr.lastIndexOf('b', -1)); //6
+        console.log(arr.lastIndexOf('b', -5)); //1
+        console.log(arr.lastIndexOf('b', -50)); //-1
+    </script>
+</body>
+
+</html>
