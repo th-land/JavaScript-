@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = '123456';
+        console.log(str, Array.prototype.reverse.apply(str.split('')).join('')); //通过split将字符串转换为数组,join进行分隔,reverse()进行顺序调换,为了可以调用reverse(),增加了apply()来使用reverse()
+    </script>
+</body>
+
+</html>
