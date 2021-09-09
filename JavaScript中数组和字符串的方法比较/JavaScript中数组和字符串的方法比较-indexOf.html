@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var string = 'hello world world';
+        console.log(string.indexOf('ld')); //9
+        console.log(string.indexOf('ld', undefined)); //9
+        console.log(string.indexOf('ld', NaN)); //9
+        console.log(string.indexOf('ld', -1)); //9
+        console.log(string.indexOf('ld', 10)); //15
+        console.log(string.indexOf('ld', [10])); //15
+        console.log(string.indexOf('true', [10])); //-1
+        console.log(string.indexOf(false, [10])); //-1
+
+
+        var arr = ['a', 'b', 'c', 'd', 'e', 'a', 'b'];
+        console.log(arr.indexOf('a', undefined)); //0
+        console.log(arr.indexOf('a', NaN)); //0
+        console.log(arr.indexOf('a', 1)); //5
+        console.log(arr.indexOf('a', true)); //5
+        console.log(arr.indexOf('a', -1)); //-1
+        console.log(arr.indexOf('a', -5)); //5
+        console.log(arr.indexOf('a', -50)); //0
+    </script>
+</body>
+
+</html>
